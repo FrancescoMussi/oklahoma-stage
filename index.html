@@ -3,52 +3,103 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Oklahoma — Coming Soon</title>
-  <style>
-    :root {
-      --bg: #0f1115;
-      --fg: #f5f6f8;
-      --muted: #9aa3af;
-      --accent: #e4572e;
-    }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; margin: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--fg);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 24px;
-    }
-    main { max-width: 640px; }
-    .badge {
-      display: inline-block;
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      border: 1px solid var(--accent);
-      border-radius: 999px;
-      padding: 4px 12px;
-      margin-bottom: 24px;
-    }
-    h1 { font-size: clamp(2rem, 6vw, 3.5rem); margin: 0 0 16px; line-height: 1.1; }
-    p { color: var(--muted); font-size: 1.125rem; line-height: 1.6; margin: 0; }
-    footer { margin-top: 40px; font-size: 0.8rem; color: var(--muted); }
-  </style>
+  <title>Oklahoma Stage</title>
+  <meta name="description" content="Staging environment for Oklahoma's radio and television brands." />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <main>
-    <span class="badge">Oklahoma · Staging</span>
-    <h1>We're building something new.</h1>
-    <p>This site is live and hosted on GitHub Pages. Content is on the way.</p>
-    <footer>&copy; 2026</footer>
-  </main>
+<body data-page="home">
+  <div id="site-header"></div>
 
-  <!-- TuneGenie station footer (khtt, krqv, kvoo, kxbl) -->
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <span class="badge">Oklahoma · Staging</span>
+      <h1>One home for every<br />station and screen.</h1>
+      <p class="lead">
+        Oklahoma Stage is where we preview our radio and television brands
+        before they go live — four stations, two channels, one place.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#stations">Explore stations</a>
+        <a class="btn btn-ghost" href="#tv">Watch TV</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Radio stations -->
+  <section class="section" id="stations">
+    <div class="container">
+      <span class="eyebrow">Radio</span>
+      <h2 class="section-title">Our stations</h2>
+      <p class="section-lead">Four formats across the dial. Tap any station to listen live and see what's on.</p>
+
+      <div class="grid grid-4" style="margin-top: 32px;">
+        <a class="card" href="khtt.html">
+          <div class="tile-mark">KHTT</div>
+          <div class="card-kicker">106.9 FM · Top 40</div>
+          <h3>KHTT</h3>
+          <p>Today's hit music, all day long.</p>
+          <span class="card-arrow">Listen live →</span>
+        </a>
+        <a class="card" href="krqv.html">
+          <div class="tile-mark">KRQV</div>
+          <div class="card-kicker">104.5 FM · Adult Contemporary</div>
+          <h3>KRQV</h3>
+          <p>The soundtrack to your day.</p>
+          <span class="card-arrow">Listen live →</span>
+        </a>
+        <a class="card" href="kvoo.html">
+          <div class="tile-mark">KVOO</div>
+          <div class="card-kicker">98.5 FM · Country</div>
+          <h3>KVOO</h3>
+          <p>Oklahoma's country home.</p>
+          <span class="card-arrow">Listen live →</span>
+        </a>
+        <a class="card" href="kxbl.html">
+          <div class="tile-mark">KXBL</div>
+          <div class="card-kicker">99.5 FM · Classic Country</div>
+          <h3>KXBL</h3>
+          <p>Big country, classic hits.</p>
+          <span class="card-arrow">Listen live →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Television -->
+  <section class="section" id="tv" style="padding-top: 0;">
+    <div class="container">
+      <span class="eyebrow">Television</span>
+      <h2 class="section-title">On the air</h2>
+      <p class="section-lead">Two channels streaming live — news, entertainment, sports and events.</p>
+
+      <div class="grid grid-2" style="margin-top: 32px;">
+        <a class="card" href="tv1.html">
+          <div class="tile-mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="13" rx="2"/><path d="m17 2-5 5-5-5"/></svg>
+          </div>
+          <div class="card-kicker">Channel 1 · News &amp; Entertainment</div>
+          <h3>TV 1</h3>
+          <p>Local news, talk and primetime entertainment.</p>
+          <span class="card-arrow">Watch live →</span>
+        </a>
+        <a class="card" href="tv2.html">
+          <div class="tile-mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18M3 12h18"/></svg>
+          </div>
+          <div class="card-kicker">Channel 2 · Sports &amp; Live Events</div>
+          <h3>TV 2</h3>
+          <p>Game day, every day — plus live community events.</p>
+          <span class="card-arrow">Watch live →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <!-- TuneGenie station footer (vuebar) -->
   <script src="https://kfby.tunegenie.com/station/pwa/fullfooter.js?bs=khtt,krqv,kvoo,kxbl" async></script>
+  <script src="site.js"></script>
 </body>
 </html>

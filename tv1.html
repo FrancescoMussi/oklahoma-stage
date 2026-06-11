@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TV 1 — Oklahoma Stage</title>
+  <meta name="description" content="TV 1 — news and entertainment. Watch live on Oklahoma Stage." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="tv1">
+  <div id="site-header"></div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <span class="eyebrow">Television · Channel 1</span>
+      <div class="callsign">
+        <h1>TV 1</h1>
+        <span class="freq">News &amp; Entertainment</span>
+      </div>
+      <p class="lead">Local news you can trust and the entertainment you love — streaming live, around the clock.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#watch">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          Watch live
+        </a>
+        <a class="btn btn-ghost" href="#guide">TV guide</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live player -->
+  <section class="section-tight" id="watch">
+    <div class="container">
+      <div class="player" role="button" tabindex="0" aria-label="Play live stream">
+        <span class="player-badge"><span class="np-dot"></span> LIVE</span>
+        <span class="player-play">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programming guide -->
+  <section class="section" id="guide" style="padding-top: 24px;">
+    <div class="container">
+      <span class="eyebrow">Tonight</span>
+      <h2 class="section-title">What's on</h2>
+      <p class="section-lead">A placeholder schedule — the live programming guide will appear here.</p>
+
+      <div class="schedule" style="margin-top: 28px;">
+        <div class="schedule-row"><span class="schedule-time">5:00 PM</span><span class="schedule-show">Evening News</span><span class="schedule-host">today's top stories</span></div>
+        <div class="schedule-row"><span class="schedule-time">6:30 PM</span><span class="schedule-show">Around Oklahoma</span><span class="schedule-host">community &amp; lifestyle</span></div>
+        <div class="schedule-row"><span class="schedule-time">7:00 PM</span><span class="schedule-show">Primetime Feature</span><span class="schedule-host">movies &amp; series</span></div>
+        <div class="schedule-row"><span class="schedule-time">10:00 PM</span><span class="schedule-show">Late Edition</span><span class="schedule-host">news &amp; weather</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="card" style="padding: 32px;">
+        <span class="eyebrow">About TV 1</span>
+        <h2 class="section-title" style="margin-bottom: 10px;">Oklahoma's news &amp; entertainment channel</h2>
+        <p class="section-lead">
+          TV 1 keeps the state informed and entertained. This is placeholder copy for the
+          staging build — show pages, anchors and schedules will live here.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <!-- TuneGenie station footer (vuebar) -->
+  <script src="https://kfby.tunegenie.com/station/pwa/fullfooter.js?bs=khtt,krqv,kvoo,kxbl" async></script>
+  <script src="site.js"></script>
+</body>
+</html>
