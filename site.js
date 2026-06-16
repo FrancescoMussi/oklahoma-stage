@@ -86,4 +86,42 @@
 
   var footerSlot = document.getElementById("site-footer");
   if (footerSlot) footerSlot.outerHTML = buildFooter();
+
+  /* ---- "Listen live" → play this page's station via the TuneGenie bar (PWM) ---- */
+  var RADIO = PAGES.filter(function (p) { return p.group === "radio"; })
+                   .map(function (p) { return p.id; });
+
+  // PWM exposes window.__PWM__ once the bar boots; poll for an early click.
+  function whenPWMReady(cb) {
+    if (window.__PWM__) return cb(window.__PWM__);
+    var tries = 0;
+    var timer = setInterval(function () {
+      if (window.__PWM__) { clearInterval(timer); cb(window.__PWM__); }
+      else if (++tries > 150) { clearInterval(timer); } // ~15s safety cap
+    }, 100);
+  }
+
+  // Load + play the given station: switch brands if needed, else just start the stream.
+  function playStation(callsign) {
+    whenPWMReady(function (pwm) {
+      pwm.getComponent("config").then(function (cfg) {
+        cfg.connector.getBase().then(function (base) {
+          if (base && base.b === callsign) {
+            pwm.getComponent("bar").then(function () {
+              pwm.dispatchEvent("bar", "listenLive");
+            });
+          } else {
+            cfg.connector.setBrand(callsign, true); // switch + autostart
+          }
+        });
+      });
+    });
+  }
+
+  if (RADIO.indexOf(current) !== -1) {
+    var liveBtn = document.querySelector(".hero a.btn-primary");
+    if (liveBtn) {
+      liveBtn.addEventListener("click", function () { playStation(current); });
+    }
+  }
 })();
