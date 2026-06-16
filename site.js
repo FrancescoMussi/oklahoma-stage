@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Oklahoma Stage — shared header + footer
+   Oklahoma Stage — shared header
    Each page sets <body data-page="..."> to drive the active nav state.
    The TuneGenie footer embed (the "vuebar") stays hardcoded in each page,
    because script tags injected via innerHTML do not execute.
@@ -49,43 +49,8 @@
     );
   }
 
-  /* ---- Footer ---- */
-  function buildFooter() {
-    var year = document.body.getAttribute("data-year") || "2026";
-    return (
-      '<footer class="site-footer">' +
-      '<div class="container">' +
-      '<div class="footer-inner">' +
-      '<div class="footer-brand">Oklahoma Stage' +
-      "<p>The staging environment for our radio and television brands. " +
-      "Content shown here is placeholder.</p>" +
-      "</div>" +
-      '<div class="footer-cols">' +
-      '<div class="footer-col"><h4>Radio</h4>' +
-      '<a href="khtt.html">KHTT</a>' +
-      '<a href="krqv.html">KRQV</a>' +
-      '<a href="kvoo.html">KVOO</a>' +
-      '<a href="kxbl.html">KXBL</a>' +
-      "</div>" +
-      '<div class="footer-col"><h4>Television</h4>' +
-      '<a href="tv1.html">TV 1</a>' +
-      '<a href="tv2.html">TV 2</a>' +
-      "</div>" +
-      "</div>" +
-      "</div>" +
-      '<div class="footer-legal">&copy; ' +
-      year +
-      " Oklahoma Stage · Staging environment</div>" +
-      "</div>" +
-      "</footer>"
-    );
-  }
-
   var headerSlot = document.getElementById("site-header");
   if (headerSlot) headerSlot.outerHTML = buildHeader();
-
-  var footerSlot = document.getElementById("site-footer");
-  if (footerSlot) footerSlot.outerHTML = buildFooter();
 
   /* ---- "Listen live" → play this page's station via TuneGenie's tgmp API ---- */
   var RADIO = PAGES.filter(function (p) { return p.group === "radio"; })
