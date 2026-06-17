@@ -5,14 +5,15 @@
    because script tags injected via innerHTML do not execute.
    ========================================================================== */
 (function () {
+  // hrefs are root-absolute so nav works from subfolder pages (e.g. /thehits/) too.
   var PAGES = [
-    { id: "home", label: "Home", href: "index.html" },
-    { id: "khtt", label: "KHTT", href: "khtt.html", group: "radio" },
-    { id: "krqv", label: "KRQV", href: "krqv.html", group: "radio" },
-    { id: "kvoo", label: "KVOO", href: "kvoo.html", group: "radio" },
-    { id: "kxbl", label: "KXBL", href: "kxbl.html", group: "radio" },
-    { id: "tv1", label: "TV 1", href: "tv1.html", group: "tv" },
-    { id: "tv2", label: "TV 2", href: "tv2.html", group: "tv" }
+    { id: "home", label: "Home", href: "/" },
+    { id: "khtt", label: "KHTT", href: "/thehits/", group: "radio" },
+    { id: "krqv", label: "KRQV", href: "/theriver/", group: "radio" },
+    { id: "kvoo", label: "KVOO", href: "/kvoo.html", group: "radio" },
+    { id: "kxbl", label: "KXBL", href: "/kxbl.html", group: "radio" },
+    { id: "tv1", label: "TV 1", href: "/tv1.html", group: "tv" },
+    { id: "tv2", label: "TV 2", href: "/tv2.html", group: "tv" }
   ];
 
   var current = (document.body.getAttribute("data-page") || "home").toLowerCase();
@@ -37,7 +38,7 @@
     return (
       '<header class="site-header">' +
       '<div class="container nav-inner">' +
-      '<a class="brand" href="index.html" aria-label="Oklahoma Stage — home">' +
+      '<a class="brand" href="/" aria-label="Oklahoma Stage — home">' +
       '<span class="brand-mark">OK</span>' +
       '<span class="brand-text">Oklahoma <span class="brand-sub">Stage</span></span>' +
       "</a>" +
